@@ -1,37 +1,105 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-	<title>Add Employee Information</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apply for Jobs</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f4f4f4;
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            background-color: #fff;
+            padding: 20px 40px;
+            border-radius: 10px;
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+            max-width: 400px;
+            width: 100%;
+            text-align: center;
+        }
+        h1 {
+            color: #4A90E2;
+            margin-bottom: 20px;
+            font-size: 24px;
+            font-weight: 700;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        input[type="text"],
+        input[type="number"],
+        input[type="file"] {
+            padding: 10px;
+            font-size: 14pt;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            transition: border-color 0.3s ease;
+        }
+        input[type="text"]:focus,
+        input[type="number"]:focus,
+        input[type="file"]:focus {
+            border-color: #4A90E2;
+            outline: none;
+        }
+        button {
+            background-color: #4A90E2;
+            color: white;
+            padding: 12px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #357ABD;
+        }
+        a {
+            margin-top: 15px;
+            display: inline-block;
+            color: #4A90E2;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        a:hover {
+            color: #357ABD;
+        }
+    </style>
 </head>
-<center>
-	<font color="black" size="4" style="font-family: avenir">
+<body>
+    <div class="container">
+        <h1>Please provide us your details</h1>
+        <form action="/addemp" autocomplete="on" method="POST" enctype="multipart/form-data">
 
-		<h1 style="color: DodgerBlue">Employee Database</h1>
+            <input type="number" name="emp_id" placeholder="Mobile Number" required autofocus><br>
+            <input type="text" name="first_name" placeholder="First Name" required><br>
+            <input type="text" name="last_name" placeholder="Last Name" required><br>
+            <input type="text" name="pri_skill" placeholder="Primary Skills" required><br>
+            <input type="text" name="location" placeholder="Address" required><br>
+            <h3 style="font-size: 15px; color: #4A90E2; font-family: 'Roboto', sans-serif; font-weight: bold; text-transform: uppercase; letter-spacing: 1px;">
+    <i class="fas fa-upload" style="margin-right: 10px;"></i> Upload Your Resume
+</h3>
 
-		<body bgcolor="lightgrey">
+            <input type="file" name="emp_image_file" accept=".pdf" required><br>
+          
+            <button type="submit" style="font-size: 16px; padding: 10px 20px; background-color: #4A90E2; color: white; border: none; border-radius: 5px; cursor: pointer;">
+    <i class="fas fa-check-circle"></i> Apply
+</button>
 
-			<form action="/addemp" autocomplete="on" method = "POST" enctype="multipart/form-data">
-
-				<button type="submit" formaction="/getemp" style="background: grey; height: 45px; width: 200px; color:white; font:oblique;">GET EMPLOYEE INFORMATION</button><br><br>
-
-		  		Employee ID:<br> <input style="height:25px;font-size:14pt; color:grey;" type="number" name="emp_id" autofocus size="40"><br><br>
-
-		  		First Name:<br> <input style="height:25px;font-size:14pt;color:grey;" type="text" name="first_name" ><br><br>
-
-		  		Last Name:<br> <input style="height:25px;font-size:14pt;color:grey;" type="text" name="last_name"><br><br>
-
-		  		Primary Skills:<br> <input style="height:25px;font-size:14pt;color:grey;" type="text" name="pri_skill"><br><br>
-
-		  		Location:<br> <input style="height:25px;font-size:14pt;color:grey;" type="text" name="location"><br><br>
-
-		  		Image: <input type=file name="emp_image_file" style="height:25px;font-size:14pt;color:grey;"> <br><br>
-
-		  		<button type="submit" style="background: grey; height: 45px; width: 200px; color: white; size: 5; font:oblique;">UPDATE DATABASE</button>
-
-			</form>
-<a href="/about">About Us</a>
-		</body>
-
-	</font>
-</center>
+        </form>
+        <a href="/about">About Us</a>
+    </div>
+</body>
 </html>
+

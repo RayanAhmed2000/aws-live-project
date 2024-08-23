@@ -1,23 +1,58 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<center>
-	<font color="DodgerBlue" size="5" style="font-family: avenir">
-		<body bgcolor="lightgrey">
-			<h1>SAVE SUCCESSFUL</h1><br>
-			<h2>Following Employee has been added to the database</h2><br>
-			<h2>{{ name }}</h2><br>
-			<title>Add Emp Output</title>
-				<form action="http://3.134.115.108:80/" autocomplete="on" method = "GET">
-
-					<button type="submit" style="background: grey; height: 45px; width: 200px; color:white; font:oblique;">GO BACK</button><br><br>
-
-				</form>
-		</body>
-	</font>
-</center>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You for Applying</title>
+    <style>
+        body {
+            background-color: #f0f4f7;
+            font-family: 'Avenir', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: #333;
+        }
+        .container {
+            text-align: center;
+            background-color: #fff;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #1e90ff;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+        h2 {
+            color: #555;
+            font-size: 1.5em;
+            margin-bottom: 20px;
+        }
+        button {
+            background-color: #1e90ff;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 1em;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #1c86ee;
+        }
+    </style>
 </head>
 <body>
-
+    <div class="container">
+        <h1>Thank You for Applying, {{ name }}!</h1>
+        <h2>We may reach out to you for job opportunities that align with your skill set.</h2>
+    </div>
 </body>
 </html>
+

@@ -26,10 +26,9 @@ def home():
     return render_template('AddEmp.html')
 
 
-@app.route("/about", methods=['POST'])
+@app.route("/about", methods=['GET'])
 def about():
-    return render_template('www.intellipaat.com')
-
+    return render_template('about.html')
 
 @app.route("/addemp", methods=['POST'])
 def AddEmp():
